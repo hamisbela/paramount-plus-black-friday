@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+
+const features = [
+  {
+    title: "Massive Library",
+    value: "40,000+ Titles",
+    description: "Stream thousands of shows and movies with your Paramount Plus Black Friday subscription"
+  },
+  {
+    title: "Black Friday Trial",
+    value: "7 Days Free",
+    description: "Claim your Paramount Plus Black Friday deal with a risk-free 7-day trial period"
+  },
+  {
+    title: "Holiday Savings",
+    value: "Save 23%",
+    description: "Special Black Friday discount: Get Paramount Plus annual plan from $5/month"
+  }
+];
+
+const pricingPlans = [
+  {
+    name: "Paramount Plus with SHOWTIME®",
+    monthlyPrice: "$12.99",
+    annualPrice: "$119.99",
+    monthlyEquivalent: "$10.00",
+    features: [
+      "Everything in Essential",
+      "No ads except live TV",
+      "Download movies & shows",
+      "Stream CBS live, with more sports & events",
+      "Access SHOWTIME® Originals"
+    ],
+    bestValue: true
+  },
+  {
+    name: "Paramount Plus Essential",
+    monthlyPrice: "$7.99",
+    annualPrice: "$59.99",
+    monthlyEquivalent: "$5.00",
+    features: [
+      "Ad supported",
+      "Watch 40,000+ episodes & movies",
+      "Stream on 3 devices at once",
+      "Catch NFL on CBS & UEFA Champions League live"
+    ],
+    bestValue: false
+  }
+];
+---
+
+<Layout 
+  title="Paramount Plus Black Friday Deal 2024 - 7 Days FREE Trial + 23% OFF [Official]" 
+  description="🔥 Exclusive Paramount Plus Black Friday Deal 2024: Get 7 days FREE trial + save 23%. Stream SHOWTIME®, NFL, UEFA & 40,000+ titles. Limited time Black Friday offer!">
+  
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <div class="mb-4 text-green-600 font-semibold flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 bg-green-600 rounded-full"></span>
+        Official Black Friday Deal • Limited Time Offer
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Paramount Plus Black Friday Deal 2024
+        <span class="block text-gray-600 text-2xl mt-2">7 Days FREE Trial + Save 23% Today</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8">
+        Last updated Nov. 2024 • Black Friday Special Offer
+      </p>
+      <a href="https://paramountplus.qflm.net/2aromG" 
+         class="inline-block bg-blue-600 text-white text-xl font-bold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+        Claim Your Black Friday Trial
+      </a>
+      <p class="text-sm text-gray-500 mt-2">Limited time Black Friday offer • Cancel anytime</p>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="grid md:grid-cols-3 gap-8 mb-16">
+      {features.map(feature => <FeatureCard {...feature} />)}
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="space-y-8 mb-16">
+      {pricingPlans.map(plan => (
+        <div class="bg-white rounded-lg p-8 shadow-sm relative">
+          {plan.bestValue && (
+            <div class="absolute -top-4 right-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+              Best Black Friday Value
+            </div>
+          )}
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold mb-2">{plan.name}</h3>
+              <p class="text-gray-600">Black Friday Offer: 7 Days FREE Trial</p>
+            </div>
+            <div class="mt-4 md:mt-0 text-right">
+              <div class="text-3xl font-bold text-blue-600">{plan.monthlyPrice}<span class="text-lg">/month</span></div>
+              <div class="text-gray-600">or {plan.annualPrice}/year</div>
+              <div class="text-sm text-green-600">(Black Friday Special: {plan.monthlyEquivalent}/month)</div>
+            </div>
+          </div>
+          <ul class="space-y-3">
+            {plan.features.map(feature => (
+              <li class="flex items-start gap-3">
+                <span class="text-blue-600">✓</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-6">
+            <a href="https://paramountplus.qflm.net/2aromG" 
+               class="inline-block w-full text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+              Get This Black Friday Deal
+            </a>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-white rounded-lg p-8 mb-16 shadow-sm">
+      <h2 class="text-2xl font-bold mb-6">Paramount Plus Black Friday Deal FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-bold mb-2">How long is the Paramount Plus Black Friday trial?</h3>
+          <p class="text-gray-600">The Black Friday offer includes a 7-day free trial with both Essential and SHOWTIME® plans.</p>
+        </div>
+        <div>
+          <h3 class="font-bold mb-2">Can I cancel my Black Friday trial?</h3>
+          <p class="text-gray-600">Yes, you can cancel your Paramount Plus Black Friday trial anytime during the 7-day period with no charges.</p>
+        </div>
+        <div>
+          <h3 class="font-bold mb-2">What's included with Paramount Plus SHOWTIME®?</h3>
+          <p class="text-gray-600">The SHOWTIME® plan includes all Essential features plus ad-free viewing (except live TV), downloads, and exclusive SHOWTIME® originals.</p>
+        </div>
+        <div>
+          <h3 class="font-bold mb-2">Is this the best Paramount Plus deal?</h3>
+          <p class="text-gray-600">Yes, this Black Friday deal offers the maximum savings available on Paramount Plus, with up to 23% off plus a 7-day free trial.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Highlights -->
+    <section class="bg-white rounded-lg p-8 mb-16 shadow-sm">
+      <h2 class="text-2xl font-bold mb-6">What's Included in Your Paramount Plus Black Friday Deal</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600">✓</span>
+          <span><strong>Black Friday Exclusive:</strong> 7-day free trial plus up to 23% savings on annual plans</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600">✓</span>
+          <span><strong>Exclusive Originals:</strong> 1923, Tulsa King, Star Trek: Strange New Worlds, and more</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600">✓</span>
+          <span><strong>Live Sports:</strong> NFL on CBS, UEFA Champions League, March Madness</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600">✓</span>
+          <span><strong>Hit Shows:</strong> Yellowstone, NCIS, Survivor, Big Brother</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600">✓</span>
+          <span><strong>Blockbuster Movies:</strong> Top Gun: Maverick, A Quiet Place, Mission: Impossible</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600">✓</span>
+          <span><strong>Family Entertainment:</strong> PAW Patrol, SpongeBob SquarePants, Nickelodeon shows</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA Bottom -->
+    <section class="text-center">
+      <h2 class="text-2xl font-bold mb-4">Don't Miss This Paramount Plus Black Friday Offer!</h2>
+      <a href="https://paramountplus.qflm.net/2aromG" 
+         class="inline-block bg-blue-600 text-white text-xl font-bold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+        Start Your Free 7-Day Trial Now!
+      </a>
+      <p class="text-sm text-gray-500 mt-2">Black Friday Special: No commitment required • Cancel anytime during trial</p>
+    </section>
+  </main>
+</Layout>
